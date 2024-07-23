@@ -1,28 +1,25 @@
 import { expect } from "chai";
-import Calculator from "../src/calculator"
+import Calculator from "../src/calculator";
 
-describe('ASYNC AWIAT AND PROMISE TEST SUITE', ()=>{
-    let calc:Calculator;
+describe("ASYNC AWAIT AND PROMISE test suite", () => {
+  let calc: Calculator;
+  it("Should work with asyn await ", async () => {
+    // arrange
+    calc = new Calculator();
+    // act
+    let result = await calc.asyncFunctionPromise();
 
-    it('should work with async and awiat',async ()=>{
+    // assert
+    expect(result).equal(4);
+  });
+  it("Should work with then ", () => {
+    // arrange
+    calc = new Calculator();
+    // act
+    calc.asyncFunctionPromise().then((result) => {
+      expect(result).equal(4);
+    });
 
-        // arrange
-        calc = new Calculator();
-        // act
-        const result = await calc.asyncFunctionPromise();
-        // assert
-        expect(result).to.equal(4);
-    })
-
-    it('should work with promise', ()=>{
-
-        // arrange
-        calc = new Calculator();
-        // act
-        calc.asyncFunctionPromise().then((result)=>{
-            expect(result).to.equal(4);
-        });
-        // assert
-       
-    })
-})
+    // assert
+  });
+});

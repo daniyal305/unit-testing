@@ -1,25 +1,23 @@
 import { expect } from "chai";
 import Calculator from "../src/calculator";
 
-describe("hooks test", () => {
+describe("hooks style", () => {
+  let calc: Calculator;
 
-  let calc:Calculator;
   before(() => {
-    console.log("before");
     calc = new Calculator();
+    console.log("before");
   });
   beforeEach(() => {
-    console.log("before each");
-  });
-
-  afterEach(() => {
-    console.log("after each");
+    console.log("beforeEach");
   });
   after(() => {
     console.log("after");
   });
-
-  // describe('add test suite', ()=>{
+  afterEach(() => {
+    console.log("afterEach");
+  });
+  // describe("add test suite", () => {
   //   it("should return sum", () => {
   //     // arrange
   //     // act
@@ -27,10 +25,8 @@ describe("hooks test", () => {
   //     // assert
   //     expect(result).to.equal(5);
   //   });
-  // })
-
-  
-  describe('subsctact test suite', ()=>{
+  // });
+  describe("subtract test suite", () => {
     it("should return substract", () => {
       // arrange
       // act
@@ -38,6 +34,19 @@ describe("hooks test", () => {
       // assert
       expect(result).to.equal(2);
     });
-  })
+  });
+  //   it("should return sum", () => {
+  //     // arrange
+  //     // act
+  //     const result = calc.add(2, 3);
+  //     // assert
+  //     expect(result).to.equal(5);
+  //   });
+  //   it("should return substract", () => {
+  //     // arrange
+  //     // act
+  //     const result = calc.subsctract(5, 3);
+  //     // assert
+  //     expect(result).to.equal(2);
+  //   });
 });
-
